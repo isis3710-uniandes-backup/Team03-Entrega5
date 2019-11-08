@@ -4,7 +4,6 @@ Bicicletas BIKES es una plataforma que pretende apoyar a los ciclistas de Bogot�
 
 
 ## Para desplegar la aplicación:
-- Instalar la versión mas reciente de NodeJS, en https://nodejs.org/es/download/
 - Moverse a la carpeta raiz app-back
 - Ejecutar `npm install` en consola
 - Moverse a la carpeta front
@@ -12,7 +11,6 @@ Bicicletas BIKES es una plataforma que pretende apoyar a los ciclistas de Bogot�
 - Volver a la carpeta raiz app-back
 - Ejecutar `npm start`
 - Ir a la carpeta front y ejecutar `npm start`
-- Automáticamente la aplicación se desplegará en el navegador.
 ### Videos
 Link Funcionalidad: https://youtu.be/f43cVXBBGaQ
 
@@ -20,3 +18,10 @@ Link Funcionalidad: https://youtu.be/f43cVXBBGaQ
 ### Dominio: 
 
 Referencias-Licencias: se usó como fondo un SVG creado en el sitio web: https://www.svgbackgrounds.com/.
+
+### Anexos 
+
+La siguiente imagen muestra el análisis de aXe realizado a la página que muestra las publicaciones de un grupo específico. Como se puede observar, presenta cero issues. Se realiza esta aclaración porque este mismo resultado no se muestra en todos los computadores. 
+
+![Imagen issues de publicaciones en grupo](https://github.com/ccjaimes/proyecto4Web/blob/master/Issues.png)
+

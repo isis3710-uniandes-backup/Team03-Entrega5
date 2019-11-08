@@ -15,7 +15,14 @@ class Grupo extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
-        fetch("/back/grupos/").then(res => res.json()).then(lista => {
+        fetch("/back/grupos/", {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'authorization': 'Bearer '+localStorage.getItem('accessToken')
+            }
+
+        }).then(res => res.json()).then(lista => {
             this.setState({
                 grupos: lista
             });
