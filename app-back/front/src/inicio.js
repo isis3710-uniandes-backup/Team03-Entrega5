@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Background from './images/Imagen.jpg';
 import { Col, Card, Row, Button } from 'react-bootstrap';
-
+import {FormattedMessage} from 'react-intl';
 
 var sectionStyle = {
     minWidth: "100%",
@@ -34,21 +34,21 @@ class Inicio extends Component {
                             <Card>
                                 <Card.Body>
                                     <Card.Title>
-                                        <h1>Bienvenido a PineBicis</h1>
-                        </Card.Title>
+                                        <h1><FormattedMessage id="Bienvenido"/></h1>
+                                    </Card.Title>
                                     <Card.Text>
-                                        En nuestro sitio tienes la oportunidad de conocer mas personas amantes de las bicicletas como tu.
-                        </Card.Text>
+                                        <FormattedMessage id="Sitio"/>
+                                    </Card.Text>
                                     <Card.Text>
-                                        Registrate ya!
-                        </Card.Text>
+                                        <FormattedMessage id="Registrate"/>
+                                    </Card.Text>
                                     <Button
                                         id="qsLogoutBtn"
                                         className="btn btn-danger btn-lg"
                                         onClick={this.signup.bind(this)}
                                     >
-                                        Registrate
-                  </Button>
+                                        <FormattedMessage id="RegistrateB"/>
+                                    </Button>
                                 </Card.Body>
                             </Card>
                         </Col>

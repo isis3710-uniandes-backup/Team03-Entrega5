@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import Robo from './robo';
+import {FormattedMessage} from 'react-intl';
 
 class ListRobos extends Component {
 
@@ -30,7 +31,7 @@ class ListRobos extends Component {
     render() {
         return (
             <div>
-                <h1>Tus reportes de robos</h1>
+                <h1><FormattedMessage id="Reportes"/></h1>
                 <CardDeck>
                     {this.renderRobos()}
                 </CardDeck>

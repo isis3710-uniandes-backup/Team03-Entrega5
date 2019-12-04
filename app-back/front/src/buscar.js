@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Taller from './Taller/taller';
+import {FormattedMessage} from 'react-intl';
 
 class Buscar extends Component {
     constructor(){
@@ -40,7 +41,7 @@ class Buscar extends Component {
                 </div>
 
                 <hr></hr>
-                <h2>Talleres</h2>
+                <h2><FormattedMessage id="Talleres"/></h2>
 
                 <br></br>
                 <div className="scro">

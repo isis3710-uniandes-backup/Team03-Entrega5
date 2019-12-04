@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
+import {FormattedMessage} from 'react-intl';
 
 class Robo extends Component {
 
@@ -20,23 +21,23 @@ class Robo extends Component {
                         <Card.Title>
 
                         </Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Marca</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted"><FormattedMessage id="Marca"/></Card.Subtitle>
                         <Card.Text>
                             {this.state.marca}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Tipo</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted"><FormattedMessage id="Tipo"/></Card.Subtitle>
                         <Card.Text>
                             {this.state.tipo}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Color</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted"><FormattedMessage id="Color"/></Card.Subtitle>
                         <Card.Text>
                             {this.state.color}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Tamaño</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted"><FormattedMessage id="Tamano"/></Card.Subtitle>
                         <Card.Text>
                             {this.state.tamano}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Direccion en la cual ocurrio el robo</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted"><FormattedMessage id="Localidad"/></Card.Subtitle>
                         <Card.Text>
                             {this.state.direccion}
                         </Card.Text>

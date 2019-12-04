@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Button, Modal, Form} from 'react-bootstrap';
 import { Card, Row } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
+import {FormattedMessage} from 'react-intl';
 
 class Reportar extends Component {
 
@@ -77,51 +78,51 @@ class Reportar extends Component {
                <Card className="text-center" >
                    <Card.Body style={{backgroundColor: '#EDF2F4'}}>
                       <Card.Title>
-                           <h1>Reportar un Robo</h1>
+                           <h1><FormattedMessage id="Reportar"/></h1>
                     </Card.Title>
-                    <Button className="btn btn-danger btn-lg" onClick={() => this.handleShow()} size="lg" block>Reportar</Button>
+                    <Button className="btn btn-danger btn-lg" onClick={() => this.handleShow()} size="lg" block><FormattedMessage id="ReportarB"/></Button>
                     </Card.Body>
                 </Card>
                     
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                    <Modal.Title>Reporte de Robo </Modal.Title>
+                    <Modal.Title><FormattedMessage id="Reportar"/> </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Por favor, ingresa la información de tu bicicleta</Modal.Body>
+                    <Modal.Body><FormattedMessage id="Info"/></Modal.Body>
 
                     <Form>
                         <Form.Group controlId="formGroupMarca">
-                            <Form.Label>Marca de la bicicleta</Form.Label>
+                            <Form.Label><FormattedMessage id="MarcaForm"/></Form.Label>
                             <Form.Control type="text" placeholder="Ej: Trek" />
                         </Form.Group>
                         <Form.Group controlId="formGroupTipo">
-                            <Form.Label>Tipo</Form.Label>
+                            <Form.Label><FormattedMessage id="Tipo"/></Form.Label>
                             <Form.Control type="text" placeholder="Ej: BMX" />
                         </Form.Group>
                         <Form.Group controlId="formGroupColor">
-                            <Form.Label>Color</Form.Label>
+                            <Form.Label><FormattedMessage id="Color"/></Form.Label>
                             <Form.Control type="text" placeholder="Ej: Rojo" />
                         </Form.Group>
                         <Form.Group controlId="formGroupTamanho">
-                            <Form.Label>Tamaño de la bicicleta</Form.Label>
+                            <Form.Label><FormattedMessage id="TamanoForm"/></Form.Label>
                             <Form.Control as="select" >
-                                <option>Alta</option>
-                                <option>Mediana</option>
-                                <option>Baja</option>
+                                <option><FormattedMessage id="Alta"/></option>
+                                <option><FormattedMessage id="Mediana"/></option>
+                                <option><FormattedMessage id="Pequena"/></option>
                             </Form.Control>
                         </Form.Group>
                         <Form.Group controlId="formGroupDireccion">
-                            <Form.Label>Por favor, ingresa la direccion en la que te robaron la bicicleta</Form.Label>
+                            <Form.Label><FormattedMessage id="LocalidadForm"/></Form.Label>
                             <Form.Control type="text" placeholder="Ej: Carrera 63 # 1" />
                         </Form.Group>
                     </Form>
 
                     <Modal.Footer>
                     <Button variant="secondary" onClick={this.statehandleClose}>
-                        Close
+                        <FormattedMessage id="CerrarB"/>
                     </Button>
                     <Button variant="primary" onClick={(e) => this.handleSubmit(e)}>
-                        Reportar
+                        <FormattedMessage id="ReportarB"/>
                     </Button>
                     </Modal.Footer>
                 </Modal>

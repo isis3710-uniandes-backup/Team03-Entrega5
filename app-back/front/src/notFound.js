@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Background from './images/Imagen.jpg';
 import { Col, Card, Row, Button } from 'react-bootstrap';
+import {FormattedMessage} from 'react-intl';
 
 var sectionStyle = {
     minWidth: "100%",
@@ -51,20 +52,20 @@ class NotFound extends Component {
                             right: "50px",
                         }}>
                             <Card>
-                                <Card.Header>404 No Encontrado</Card.Header>
+                                <Card.Header><FormattedMessage id="NoEncontrado"/></Card.Header>
                                 <Card.Body>
                                     <Card.Title>
-                                        <h1>Ops, algo salio mal</h1>
+                                        <h1><FormattedMessage id="Ops"/></h1>
                                     </Card.Title>
                                     <Card.Text>
-                                        La ruta que estas buscando no existe pero puedes regresar a nuestra pagina principal
+                                        <FormattedMessage id="LaRutaNoExiste"/>
                                     </Card.Text>
                                     <Button
                                         id="qsLogoutBtn"
                                         className="btn btn-danger btn-lg"
                                         onClick={this.salir}
                                     >
-                                        Regresar
+                                        <FormattedMessage id="RegresarB"/>
                                     </Button>
                                 </Card.Body>
                             </Card>
