@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import {FormattedMessage} from 'react-intl';
+
 class User extends Component {
   state = {
 
@@ -105,12 +107,12 @@ class User extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><h2>Nickname:</h2></th>
+                      <th scope="row"><h2><FormattedMessage id="Usuario"/></h2></th>
                       <td> <h2>  {this.state.nickname} </h2></td>
 
                     </tr>
                     <tr>
-                      <th scope="row"> <h2>Correo:  </h2></th>
+                      <th scope="row"> <h2><FormattedMessage id="Correo"/> </h2></th>
                       <td> <h2> {this.state.name} </h2></td>
 
                     </tr>
