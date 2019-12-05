@@ -15,10 +15,24 @@ class TallerDetailed extends Component {
                   'Accept': 'application/json'
                  }
           
-              }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios}) }))
+              }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios});
+              localStorage.setItem('taller', JSON.stringify({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios}));
+            }))
     }
    
     componentDidMount(){
+        if (!navigator.onLine) {
+            if (localStorage.getItem('taller') === null)
+                this.setState({
+                    taller:{},
+                    productosTaller:[],
+                    serviciosTaller:[]
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('taller'));
+                this.setState(u);
+            }
+        }
         if(document.getElementById("navPage") === null){
             document.getElementById("detTaller").setAttribute("role","main");
         }

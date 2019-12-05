@@ -15,15 +15,37 @@ class Taller extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
-
+        if (!navigator.onLine) {
+            if (localStorage.getItem('talleres') === null)
+                this.setState({
+                    talleres: []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('talleres'));
+                this.setState(u);
+            }
+        }else{
         fetch("/back/talleres/").then(res => res.json()).then(lista => {
             this.setState({
                 talleres: lista
             });
+            localStorage.setItem('talleres', JSON.stringify({
+                talleres: lista
+            }));
         });
     }
+    }
     componentDidMount() {
-
+        if (!navigator.onLine) {
+            if (localStorage.getItem('talleres') === null)
+                this.setState({
+                    talleres: []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('talleres'));
+                this.setState(u);
+            }
+        }
         if (document.getElementById("navPage") === null) {
             document.getElementById("pagTaller").setAttribute("role", "main");
         }

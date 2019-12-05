@@ -31,5 +31,10 @@
     "Log": "Estas logeado!",
     "LogNo": "No estas logeado! Por favor",
     "LogNo1":"Ingresa",
-    "LogNo2":"para continuar."
+    "LogNo2":"para continuar.",
+    "Perfil":"Perfil",
+    "Grupos":"Grupos",
+    "ReportarRobo":"Reportar Robo",
+    "Misreportes":"Mis reportes",
+    "Talleres":"Talleres"
 }

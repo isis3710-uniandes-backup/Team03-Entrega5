@@ -14,13 +14,28 @@ class ListRobos extends Component {
     UNSAFE_componentWillMount() {
         var m=JSON.parse(localStorage.getItem('user'));
 
+        if (!navigator.onLine) {
+            if (localStorage.getItem('robos') === null)
+                this.setState({
+                    listRobos : []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('robos'));
+                this.setState(u);
+            }
+        }else{
+        
         var str ="/robos/" + m.nickname + ""
         fetch(str).then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({
                 listRobos: lista
             });
+            localStorage.setItem('robos', JSON.stringify({
+                listRobos: lista
+            }));
         });
+    }
     }
 
     renderRobos() {

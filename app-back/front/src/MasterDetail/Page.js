@@ -3,6 +3,7 @@ import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { ListGroup, Row, Col } from 'react-bootstrap';
+import {FormattedMessage} from 'react-intl';
 
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
@@ -51,19 +52,19 @@ class Page extends Component {
 
                                 <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} >
                                     <ListGroup.Item action className="List__Group"  >
-                                        <h5 style={{ color: '#8D99AE' }}>Perfil</h5>
+                                        <h5 style={{ color: '#8D99AE' }}><FormattedMessage id="Perfil"/> </h5>
                                     </ListGroup.Item>
                                 </Link>
                                 <Link to="/grupos" style={{ color: '#8D99AE' }}>
                                     <ListGroup.Item action className="List__Group"  >
-                                        <h5 style={{ color: '#8D99AE' }}>Grupos</h5>
+                                        <h5 style={{ color: '#8D99AE' }}><FormattedMessage id="Grupos"/></h5>
                                     </ListGroup.Item>
                                 </Link>
 
 
                                 <Link to="/reportar" style={{ color: '#8D99AE' }}>
                                     <ListGroup.Item action className="List__Group"  >
-                                        <h5 style={{ color: '#8D99AE' }}>Reportar Robo</h5>
+                                        <h5 style={{ color: '#8D99AE' }}><FormattedMessage id="ReportarRobo"/></h5>
                                     </ListGroup.Item>
 
                                 </Link>
@@ -71,14 +72,14 @@ class Page extends Component {
                                 <Link to="/robos" style={{ color: '#8D99AE' }}>
 
                                     <ListGroup.Item action className="List__Group"  >
-                                        <h5 style={{ color: '#8D99AE' }}>Mis reportes</h5>
+                                        <h5 style={{ color: '#8D99AE' }}><FormattedMessage id="Misreportes"/></h5>
                                     </ListGroup.Item>
 
                                 </Link>
                                 <Link to="/talleres" style={{ color: '#8D99AE' }}>
 
                                     <ListGroup.Item action className="List__Group"  >
-                                        <h5 style={{ color: '#8D99AE' }}>Talleres</h5>
+                                        <h5 style={{ color: '#8D99AE' }}><FormattedMessage id="Talleres"/></h5>
                                     </ListGroup.Item>
 
                                 </Link>

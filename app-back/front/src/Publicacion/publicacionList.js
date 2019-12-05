@@ -9,15 +9,35 @@ class PublicacionList extends Component {
         
     }
     
-    componentDidMount(){
-
+    UNSAFE_componentDidMount(){
+        if (!navigator.onLine) {
+            if (localStorage.getItem('publicaciones') === null)
+                this.setState({
+                    list: []
+                
+                    
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('publicaciones'));
+                this.setState(u);
+            }
+        }
+            else{
         fetch("/publicaciones/").then(res => res.json()).then(m=>{console.log(m);this.setState({
             list:m
             
-        })});
+        });
+        localStorage.setItem('publicaciones', JSON.stringify({
+            list: m
+        }));
+    
+    });
+}
     }
     
-
+    UNSAFE_componentWillUnmount() {
+        localStorage.setItem('publicaciones', JSON.stringify(this.state));
+      }
   
     render() {
         

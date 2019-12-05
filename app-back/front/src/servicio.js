@@ -4,7 +4,17 @@ import {Card} from 'react-bootstrap';
 class Servicio extends Component {
 
     UNSAFE_componentWillMount()
-    {
+    {if (!navigator.onLine) {
+        if (localStorage.getItem('servicio') === null)
+            this.setState({
+                nombre:"",
+                tipo:""
+            })
+        else{
+          var u=JSON.parse(localStorage.getItem('servicio'));
+            this.setState(u);
+        }
+    }else{
          var id2=this.state.id;
          let m="/servicios/"+id2;
           fetch(m, {
@@ -17,7 +27,12 @@ class Servicio extends Component {
               }).then(data=>(data.json()).then(t=> {
                   
 
-                this.setState({id:t._id, nombre: t.nombre, tipo:t.tipo}) }))
+                this.setState({id:t._id, nombre: t.nombre, tipo:t.tipo});
+                localStorage.setItem('servicio', JSON.stringify({id:t._id, nombre: t.nombre, tipo:t.tipo}));
+            
+            
+            }))
+        }
     }
     constructor(props){
         super(props);

@@ -46,7 +46,7 @@ class User extends Component {
       }
   }
 
-    /**var persistState = localStorage.getItem('user');
+    var persistState = localStorage.getItem('user');
 
     if (persistState) {
       try {
@@ -54,7 +54,7 @@ class User extends Component {
       } catch (e) {
         // is not json
       }
-    }**/
+    }
   }
 
   componentWillUnmount() {

@@ -31,5 +31,11 @@
     "Log": "You are logged in!",
     "LogNo": "You're not logged in! Please,",
     "LogNo1":"Enter",
-    "LogNo2":"to continue."
+    "LogNo2":"to continue.",
+    "Perfil":"Profile",
+    "Grupos":"Groups",
+    "ReportarRobo":"Report Robbery",
+    "Misreportes":"My reports",
+    "Talleres":"Mechanical Workshops"
+
 }
