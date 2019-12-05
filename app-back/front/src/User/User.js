@@ -16,7 +16,37 @@ class User extends Component {
   }
 
   componentDidMount() {
-    var persistState = localStorage.getItem('user');
+
+    if (!navigator.onLine) {
+      if (localStorage.getItem('user') === null)
+          this.setState({
+
+            sub: "",
+            nickname: "",
+            name: "",
+            picture: "",
+            updated_at: "",
+            email: "",
+            email_verified: ""
+        
+          })
+      else{
+        var u=JSON.parse(localStorage.getItem('list'));
+          this.setState({
+
+            sub: u.sub,
+            nickname: u.nickname,
+            name: u.name,
+            picture: u.picture,
+            updated_at: u.updated_at,
+            email: u.email,
+            email_verified: u.email_verified
+        
+          });
+      }
+  }
+
+    /**var persistState = localStorage.getItem('user');
 
     if (persistState) {
       try {
@@ -24,7 +54,7 @@ class User extends Component {
       } catch (e) {
         // is not json
       }
-    }
+    }**/
   }
 
   componentWillUnmount() {
@@ -91,7 +121,7 @@ class User extends Component {
                     <Button className="btn btn-danger btn-lg"
                       onClick={this.logout.bind(this)}
                     >
-                      Log Out
+                      <FormattedMessage id="Salir"/>
                   </Button>
                   </div>
                 </div>

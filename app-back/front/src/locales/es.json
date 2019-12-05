@@ -26,5 +26,6 @@
     "RegistrateB":"Registrate",
     "Estadisticas":"Estadisticas por localidad",
     "Usuario": "Usuario",
-    "Correo": "Correo"
+    "Correo": "Correo",
+    "Salir": "Cerrar sesion"
 }
