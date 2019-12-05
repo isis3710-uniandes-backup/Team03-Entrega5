@@ -27,5 +27,9 @@
     "Estadisticas":"Estadisticas por localidad",
     "Usuario": "Usuario",
     "Correo": "Correo",
-    "Salir": "Cerrar sesion"
+    "Salir": "Cerrar sesion",
+    "Log": "Estas logeado!",
+    "LogNo": "No estas logeado! Por favor",
+    "LogNo1":"Ingresa",
+    "LogNo2":"para continuar."
 }

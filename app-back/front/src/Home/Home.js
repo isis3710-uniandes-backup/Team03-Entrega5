@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FormattedMessage} from 'react-intl';
 
 class Home extends Component {
   login() {
@@ -11,19 +12,19 @@ class Home extends Component {
         {
           isAuthenticated() && (
               <h4>
-                Estas logeado!
+                <FormattedMessage id="Log"/>
               </h4>
             )
         }
         {
           !isAuthenticated() && (
               <h4>
-                No estas logeado! Por favor{' '}
+                <FormattedMessage id="LogNo"/>{' '}
                 <a style={{ cursor: 'pointer' }}
                   onClick={this.login.bind(this)}>
-                  Ingresa
+                  <FormattedMessage id="LogNo1"/>
                 </a>
-                {' '} para continuar.
+                {' '} <FormattedMessage id="LogNo2"/>
               </h4>
             )
         }

@@ -13,9 +13,26 @@ class GrupoDetailed extends Component {
                 'Accept': 'application/json'
             }
 
-        }).then(data => (data.json()).then(grupo => { this.setState({ grupoNombre: grupo.nombre, publicacionesGrupo: grupo.publicaciones }) }))
+        }).then(data => (data.json()).then(grupo => { this.setState({ grupoNombre: grupo.nombre, publicacionesGrupo: grupo.publicaciones });
+    
+        localStorage.setItem('grupo', JSON.stringify({ grupoNombre: grupo.nombre, publicacionesGrupo: grupo.publicaciones }));
+    }))
     }
+    UNSAFE_componentDidMount() {
 
+        if (!navigator.onLine) {
+          if (localStorage.getItem('grupo') === null)
+              this.setState({
+                grupoNombre: '',
+                publicacionesGrupo: [],
+    
+            });
+          else{
+            var u=JSON.parse(localStorage.getItem('grupo'));
+              this.setState(u);
+          }
+      }
+    }
     constructor(props) {
         super(props);
         this.state = {

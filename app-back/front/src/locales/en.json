@@ -27,5 +27,9 @@
     "Estadisticas":"Statistics per district",
     "Usuario": "Nickname",
     "Correo": "Email",
-    "Salir": "Log out"
+    "Salir": "Log out",
+    "Log": "You are logged in!",
+    "LogNo": "You're not logged in! Please,",
+    "LogNo1":"Enter",
+    "LogNo2":"to continue."
 }

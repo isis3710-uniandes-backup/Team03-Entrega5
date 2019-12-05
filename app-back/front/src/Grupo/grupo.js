@@ -26,7 +26,28 @@ class Grupo extends Component {
             this.setState({
                 grupos: lista
             });
+            var gruo={
+                grupos: lista
+            };
+            localStorage.setItem('grupos', JSON.stringify(gruo));
         });
+    }
+    UNSAFE_componentDidMount() {
+
+        if (!navigator.onLine) {
+          if (localStorage.getItem('grupos') === null)
+              this.setState({
+                show: false,
+                grupos: [],
+                nombre: '',
+                descripcion: '',
+                redirect:false
+            });
+          else{
+            var u=JSON.parse(localStorage.getItem('grupos'));
+              this.setState(u);
+          }
+      }
     }
     handleShow = () => {
         console.log(this.state.show)
@@ -38,7 +59,7 @@ class Grupo extends Component {
     handleClose = () => {
         this.setState({
             show: false
-        })
+        });
     }
 
 
