@@ -11,7 +11,25 @@ import Taller from './Taller/taller'
 import Publicacion from './Publicacion/publicacionList'
 
 import TallerDetailed from './Taller/tallerDetailed'
+import {IntlProvider} from 'react-intl';
 
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
+
+let idioma= ()=>{
+    console.log(navigator.language||navigator.browserLanguage)
+    return navigator.language||navigator.browserLanguage;
+}
+
+let messages =() =>{
+
+    if(idioma() ==="es" || idioma()==="es-ES"){
+        return localeEsMessages;
+    }
+    else if(idioma() === "en"){
+        return localeEnMessages;
+    }
+}
 
 const auth = new Auth();
 
@@ -23,6 +41,7 @@ const handleAuthentication = ({location}) => {
 
 export const makeMainRoutes = () => {
   return (
+  <IntlProvider locale={idioma()} messages= {messages()}>
       <Router history={history}>
         <div>
           <Route path="/" render={(props) => <Home auth={auth} {...props} />} />
@@ -40,5 +59,6 @@ export const makeMainRoutes = () => {
           }}/>
         </div>
       </Router>
+      </IntlProvider>
   );
 }
