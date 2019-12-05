@@ -49,7 +49,8 @@ class Chart extends Component {
         svg.attr("height", height);
 
         let g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-        dataF = data[0]['localidad'][0]
+        const dataF = data[0]['semanas']
+        console.log(dataF)
         const y = d3.scaleLinear() 
             .domain([0, 30])
             .range([iheight, 0]);

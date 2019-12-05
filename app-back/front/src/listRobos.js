@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import Robo from './robo';
 import {FormattedMessage} from 'react-intl';
+import Chart from './chart';
 
 class ListRobos extends Component {
 
@@ -35,6 +36,8 @@ class ListRobos extends Component {
                 <CardDeck>
                     {this.renderRobos()}
                 </CardDeck>
+                <h1><FormattedMessage id="Estadisticas"/></h1>
+                <Chart></Chart>
             </div>
         );
     }
