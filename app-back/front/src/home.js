@@ -23,11 +23,25 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    if(this.hola()){
     const { renewSession } = this.props.auth;
 
     if (localStorage.getItem('isLoggedIn') === 'true') {
       renewSession();
+    }}
+  }
+  hola(){
+        if (navigator.onLine) {
+        return true;
+      }else{
+        if (localStorage.getItem('user') === null){
+         return true;
+        
+      }
+      else{
+      return false;
     }
+      }
   }
   render() {
     const { isAuthenticated } = this.props.auth;
@@ -35,7 +49,7 @@ class Home extends Component {
     return (
       <div>
         {
-          !isAuthenticated() && (
+          this.hola() && (!isAuthenticated() && (
             <div>
               <div style={{ paddingTop: "50px" }}>
 
@@ -71,7 +85,7 @@ class Home extends Component {
               </Switch>
             </div>
 
-          )
+          ))
 
         }
       </div>
