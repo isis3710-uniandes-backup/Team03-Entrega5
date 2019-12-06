@@ -31,7 +31,7 @@ class User extends Component {
         
           })
       else{
-        var u=JSON.parse(localStorage.getItem('list'));
+        var u=JSON.parse(localStorage.getItem('user'));
           this.setState({
 
             sub: u.sub,
@@ -84,20 +84,35 @@ class User extends Component {
 
   render() {
     var m = null;
+var m2=false;
+    if (navigator.onLine) {
     if ((this.props.location !== undefined) && (this.props.location.aboutProps !== undefined) && (this.props.location.aboutProps.auth !== undefined)) {
       m = this.props.location.aboutProps.auth;
     }
     else {
       m = this.props.auth;
-
     }
+  }else{
+    if (localStorage.getItem('user') === null){
+    m2=false;
+    m = this.props.location.aboutProps.auth;
+  }
+  else{
+  m2=true;
+  var u=JSON.parse(localStorage.getItem('user'));
+          
+          m = this.props.auth;
+}
+  }
+
+
     const { isAuthenticated } = m;
 
 
     return (
       <div className="container">
         {
-          isAuthenticated() && (
+          (m2||isAuthenticated()) && (
 
 
 
