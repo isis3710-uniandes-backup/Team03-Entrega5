@@ -8,14 +8,16 @@ export default class Auth {
   expiresAt;
   user;
 
+  
+
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
+    redirectUri: this.getCall(),
     responseType: 'token id_token',
     scope: 'openid profile'
   });
-
+  
   constructor() {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -25,9 +27,16 @@ export default class Auth {
     this.getIdToken = this.getIdToken.bind(this);
     this.getUser = this.getUser.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.getCall = this.getCall.bind(this);
+    
   }
 
-
+  getCall(){
+    var u=window.location.href;
+    var temp= u.split("/");
+    console.log("http://"+temp[2]+"/callback");
+    return "http://"+temp[2]+"/callback";
+   }
   signup() {
     this.auth0.authorize();
   }
