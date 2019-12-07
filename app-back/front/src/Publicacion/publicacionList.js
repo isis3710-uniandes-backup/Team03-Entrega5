@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PublicacionCard from './publicacionCard';
+import {FormattedMessage} from 'react-intl';
+
 
 class PublicacionList extends Component {
     
@@ -44,7 +46,9 @@ class PublicacionList extends Component {
         return (
             <div className="row">
                 <div className="container">
-                    <h2>Publicaciones</h2>
+                    <h2>                
+                    <FormattedMessage id="Publicaciones"/>
+                    </h2>
                            {this.state.list.map((e,i)=>
                            
                               <PublicacionCard value={e} key={i}></PublicacionCard> )}
