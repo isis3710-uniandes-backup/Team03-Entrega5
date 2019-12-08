@@ -37,6 +37,13 @@
     "ReportarRobo":"Report Robbery",
     "Misreportes":"My reports",
     "Talleres":"Mechanical Workshops",
-    "Publicaciones":"Posts"
+    "Publicaciones":"Posts", 
+    "Nombre":"Name",
+    "Productos":"Products",
+    "Hora de Atencion" :"Schedule",
+    "Direccion":"Address",
+    "Servicios disponibles":"Available services",
+    "Productos disponibles":"Available products",
+    "Servicios":"Services"
 
 }

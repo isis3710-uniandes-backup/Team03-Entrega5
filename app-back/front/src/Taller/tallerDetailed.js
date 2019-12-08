@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ListServicios from '../listServicios';
 import Producto from '../Producto/producto';
-
+import {FormattedMessage ,FormattedNumber, FormattedPlural} from 'react-intl';
 
 class TallerDetailed extends Component {
    
@@ -53,7 +53,7 @@ class TallerDetailed extends Component {
             <div className="container mt-4" id="detTaller">
                 <div className="row">
                     <div className="col">
-                        <h2>Productos</h2>
+                        <h2><FormattedMessage id="Productos"/></h2>
                         {this.state.productosTaller.map((e,i)=> {
                         return <Producto value={e} key={i}></Producto>
                     })}
@@ -65,16 +65,16 @@ class TallerDetailed extends Component {
                         <h1>{this.state.taller.nombre}</h1>
                         <hr className="my-4"></hr>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item "><strong>Hora de Atencion :</strong> {this.state.taller.horaAtencion}</li>
-                             <li className="list-group-item "><strong>Direccion :</strong> {this.state.taller.direccion}</li>
-                            <li className="list-group-item "><strong>Servicios disponibles :</strong> {this.state.serviciosTaller.length}</li>
-                            <li className="list-group-item "><strong>Productos disponibles :</strong>     {this.state.productosTaller.length}   </li>
+                            <li className="list-group-item "><strong><FormattedMessage id="Hora de Atencion"/>:</strong> {this.state.taller.horaAtencion}</li>
+                             <li className="list-group-item "><strong><FormattedMessage id="Direccion"/> :</strong> {this.state.taller.direccion}</li>
+                            <li className="list-group-item "><strong><FormattedMessage id="Servicios disponibles"/> :</strong> {this.state.serviciosTaller.length}</li>
+                            <li className="list-group-item "><strong><FormattedMessage id="Productos disponibles"/> :</strong>     {this.state.productosTaller.length}   </li>
                         </ul>
                             </div>
                         </div>
                     </div>
                     <div className="col ">
-                        <h2>Servicios</h2>
+                        <h2><FormattedMessage id="Servicios"/></h2>
                         <ListServicios list={this.state.serviciosTaller}></ListServicios>
                     </div>
 

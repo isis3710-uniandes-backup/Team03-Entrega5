@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FormattedMessage ,FormattedNumber, FormattedPlural} from 'react-intl';
 import PublicacionCard from '../Publicacion/publicacionCard'
 
 class GrupoDetailed extends Component {
@@ -56,7 +57,7 @@ class GrupoDetailed extends Component {
                             <div className="container">
                                 <h1>{this.state.grupoNombre}</h1>
                                 <hr className="my-4"></hr>
-                                <h2>Publicaciones</h2>
+                                <h2><FormattedMessage id="Publicaciones"/></h2>
                                 {this.state.publicacionesGrupo.map((e, i) =>
                                     <PublicacionCard value={e} key={i}></PublicacionCard>
                                 )}

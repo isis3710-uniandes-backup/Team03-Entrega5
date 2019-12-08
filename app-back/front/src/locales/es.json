@@ -37,5 +37,12 @@
     "ReportarRobo":"Reportar Robo",
     "Misreportes":"Mis reportes",
     "Talleres":"Talleres",
-    "Publicaciones":"Publicaciones"
+    "Publicaciones":"Publicaciones",
+    "Nombre":"Nombre",
+    "Productos":"Productos",
+    "Hora de Atencion" :"Hora de Atencion",
+    "Direccion ":"Direccion",
+    "Servicios disponibles":"Servicios disponibles",
+    "Productos disponibles":"Productos disponibles",
+    "Servicios":"Servicios"
 }
