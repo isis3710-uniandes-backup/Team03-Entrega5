@@ -44,6 +44,9 @@
     "Direccion":"Address",
     "Servicios disponibles":"Available services",
     "Productos disponibles":"Available products",
-    "Servicios":"Services"
+    "Servicios":"Services",
+    "Me gusta": "Like",
+    "Uno":"Like",
+    "Varios":"Likes" 
 
 }

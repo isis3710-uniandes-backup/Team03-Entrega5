@@ -1,5 +1,7 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
+import {FormattedDate,FormattedPlural,FormattedMessage} from 'react-intl';
+
 
 
  class PublicacionCard extends React.Component {
@@ -68,13 +70,23 @@ updateLikes = () => {
                   </div>
                 </div>
                 <div className="posttext pull-left">
-                <h6 className="date">{this.state.fecha}</h6>
+                <h6 className="date">
+                <FormattedDate 
+				        	value={new Date(this.state.fecha)}
+                    year='numeric'
+                    month='long'
+                    day='numeric'
+                    weekday='long'
+                  />
+                  
+                  </h6>
                 <h5>{this.state.contenido}</h5>
 
                 <Button className="btn btn-danger btn-lg btn-xs" 
                 
 
-onClick={this.updateLikes}>Like {this.state.likes}
+onClick={this.updateLikes}><FormattedMessage id="MeGusta"/> 
+				  <FormattedPlural value={this.state.likes} one={<FormattedMessage id="Uno"/>} other={<FormattedMessage id="Varios"/>} />
 
     
   </Button>
