@@ -7,6 +7,7 @@ import Grupo from './Grupo/grupo';
 import './home.css';
 import TallerDetailed from './Taller/tallerDetailed';
 import NotFound from './notFound';
+import Map from './maps/map';
 
 class Home extends Component {
 
@@ -61,6 +62,7 @@ class Home extends Component {
                     <Nav className="ml-auto">
                       <Nav.Link as={Link} to="/">Home</Nav.Link>
                       <Nav.Link as={Link} to="/talleres">Talleres</Nav.Link>
+                      <Nav.Link as={Link} to="/maps">Mapa de robos</Nav.Link>
                       <Nav.Link onClick={this.signup.bind(this)}>Registrarse</Nav.Link>
                       <Nav.Link onClick={this.login.bind(this)}>Login</Nav.Link>
                     </Nav>
@@ -80,6 +82,9 @@ class Home extends Component {
                 </Route>
                 <Route path="/talleres/:taller">
                   <TallerDetailed></TallerDetailed>
+                </Route>
+                <Route path="/maps">
+                  <Map></Map>
                 </Route>
                 <Route component={NotFound}></Route>
               </Switch>

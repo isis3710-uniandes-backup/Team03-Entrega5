@@ -8,31 +8,40 @@ class Chart extends Component {
             {
                 localidad:"Teusaquillo", 
                 semanas:[
-                    { semana: "3/11/19-9/11/19", robos: 1},
-                    { semana: "10/11/19-16/11/19", robos: 5 },
-                    { semana: "17/11/19-23/11/19", robos: 7 },
-                    { semana: "24/11/19-30/11/19", robos: 19 },
-                    { semana: "1/12/19-7/12/19", robos: 16},
-                    { semana: "13/12/19-19/12/19", robos: 24},
-                    { semana: "20/12/19-16/12/19", robos: 30 }
+                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*30},
+                    { semana: "10/11/19-16/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "24/11/19-30/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "1/12/19-7/12/19", robos: 1 + Math.random()*30},
+                    { semana: "13/12/19-19/12/19", robos: 1 + Math.random()*30},
+                    { semana: "20/12/19-16/12/19", robos: 1 + Math.random()*30 }
                 ]
             },
             {
                 localidad:"Usaquen", 
                 semanas:[
-                    { semana: "3/11/19-9/11/19", robos: 5},
-                    { semana: "10/11/19-16/11/19", robos: 10 },
-                    { semana: "17/11/19-23/11/19", robos: 15 },
-                    { semana: "24/11/19-30/11/19", robos: 3 },
-                    { semana: "1/12/19-7/12/19", robos: 9},
-                    { semana: "13/12/19-19/12/19", robos: 27},
-                    { semana: "20/12/19-16/12/19", robos: 25 }
+                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*30},
+                    { semana: "10/11/19-16/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "24/11/19-30/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "1/12/19-7/12/19", robos: 1 + Math.random()*30},
+                    { semana: "13/12/19-19/12/19", robos: 1 + Math.random()*30},
+                    { semana: "20/12/19-16/12/19", robos: 1 + Math.random()*30 }
                 ]
             }
             
         ];
         
         this.drawChart(data)
+    }
+
+    getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
     
     drawChart(data) {
@@ -64,7 +73,7 @@ class Chart extends Component {
 
         bars.enter().append("rect")
         .attr("class", "bar")
-        .style("fill", "steelblue")
+        .style("fill", d => this.getRandomColor())
         .attr("x", d => x(d.semana))
         .attr("y", d => y(d.robos))
         .attr("height", d => iheight - y(d.robos))
