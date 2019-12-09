@@ -1,74 +1,74 @@
 import React, { Component } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import Robo from './robo';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import Chart from './maps/chart';
 import Map from './maps/map';
 
 class ListRobos extends Component {
 
-    state={
-            listRobos : []
-        }
-    
+    state = {
+        listRobos: []
+    }
+
 
     UNSAFE_componentWillMount() {
-        var m=JSON.parse(localStorage.getItem('user'));
+        var m = JSON.parse(localStorage.getItem('user'));
 
         if (!navigator.onLine) {
             if (localStorage.getItem('robos') === null)
                 this.setState({
-                    listRobos : []
+                    listRobos: []
                 })
-            else{
-              var u=JSON.parse(localStorage.getItem('robos'));
+            else {
+                var u = JSON.parse(localStorage.getItem('robos'));
                 this.setState(u);
             }
-        }else{
-        
-        var str ="http://localhost:3001/robos/" + m.nickname + "/"
-        fetch(str).then(res => res.json()).then(lista => {
-            console.log(lista);
-            this.setState({
-                listRobos: lista
+        } else {
+
+            var str = "http://localhost:3001/robos/" + m.nickname + "/"
+            fetch(str).then(res => res.json()).then(lista => {
+                console.log(lista);
+                this.setState({
+                    listRobos: lista
+                });
+                localStorage.setItem('robos', JSON.stringify({
+                    listRobos: lista
+                }));
             });
-            localStorage.setItem('robos', JSON.stringify({
-                listRobos: lista
-            }));
-        });
-    }
+        }
     }
     componentDidMount() {
         if (!navigator.onLine) {
             if (localStorage.getItem('robos') === null)
                 this.setState({
-                    listRobos : []
+                    listRobos: []
                 })
-            else{
-              var u=JSON.parse(localStorage.getItem('robos'));
+            else {
+                var u = JSON.parse(localStorage.getItem('robos'));
                 this.setState(u);
             }
         }
-        
-         
-      
+
+
+
     }
 
     renderRobos() {
-        return this.state.listRobos.map((e,i) => ( 
+        return this.state.listRobos.map((e, i) => (
             <Robo value={e} key={i}></Robo>
         ));
-      }
+    }
 
     render() {
         return (
             <div>
-                <h1><FormattedMessage id="Reportes"/></h1>
+                <h1><FormattedMessage id="Reportes" /></h1>
                 <CardDeck>
                     {this.renderRobos()}
                 </CardDeck>
-                <h1><FormattedMessage id="Estadisticas"/></h1>
-                {/* <Chart></Chart> */}
+                <h1><FormattedMessage id="Estadisticas" /></h1>
+                <Chart></Chart>
             </div>
         );
     }
