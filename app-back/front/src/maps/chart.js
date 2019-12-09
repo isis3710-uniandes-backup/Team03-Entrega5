@@ -9,9 +9,9 @@ class Chart extends Component {
             {
                 localidad:"Teusaquillo", 
                 semanas:[
-                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*30},
-                    { semana: "10/11/19-16/11/19", robos: 1 + Math.random()*30 },
-                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*20},
+                    { semana: "10/11/19-16/11/19", robos: 1 + Math.random()*22 },
+                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*25 },
                     { semana: "24/11/19-30/11/19", robos: 1 + Math.random()*30 },
                     { semana: "1/12/19-7/12/19", robos: 1 + Math.random()*30},
                     { semana: "13/12/19-19/12/19", robos: 1 + Math.random()*30},
@@ -21,13 +21,13 @@ class Chart extends Component {
             {
                 localidad:"Usaquen", 
                 semanas:[
-                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*30},
+                    { semana: "3/11/19-9/11/19", robos: 1 + Math.random()*20},
                     { semana: "10/11/19-16/11/19", robos: 1 + Math.random()*30 },
-                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*30 },
+                    { semana: "17/11/19-23/11/19", robos: 1 + Math.random()*20 },
                     { semana: "24/11/19-30/11/19", robos: 1 + Math.random()*30 },
                     { semana: "1/12/19-7/12/19", robos: 1 + Math.random()*30},
                     { semana: "13/12/19-19/12/19", robos: 1 + Math.random()*30},
-                    { semana: "20/12/19-16/12/19", robos: 1 + Math.random()*30 }
+                    { semana: "20/12/19-16/12/19", robos: 1 + Math.random()*28 }
                 ]
             }
             
@@ -61,7 +61,9 @@ class Chart extends Component {
 
 
         let g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-        const dataF = data[0]['semanas']
+        var d = Math.floor(Math.random()*2);
+        console.log(d);
+        const dataF = data[d]['semanas']
         console.log(dataF)
         const y = d3.scaleLinear() 
             .domain([0, 30])
