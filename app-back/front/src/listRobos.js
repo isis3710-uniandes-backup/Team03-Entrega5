@@ -68,10 +68,7 @@ class ListRobos extends Component {
                     {this.renderRobos()}
                 </CardDeck>
                 <h1><FormattedMessage id="Estadisticas" /></h1>
-                {/* <Chart></Chart> */}
-                <div>
-                    <Map></Map>
-                </div>
+                <Chart></Chart>
             </div>
         );
     }
