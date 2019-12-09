@@ -8,7 +8,7 @@ class GrupoDetailed extends Component {
     UNSAFE_componentWillMount() {
         let idGrupo = this.props.match.params.id;
         console.log(idGrupo);
-        fetch("/back/grupos/" + idGrupo, {
+        fetch("http://localhost:3001/back/grupos/" + idGrupo, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

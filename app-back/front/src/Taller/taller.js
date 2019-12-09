@@ -25,7 +25,7 @@ class Taller extends Component {
                 this.setState(u);
             }
         }else{
-        fetch("/back/talleres/").then(res => res.json()).then(lista => {
+        fetch("http://localhost:3001/back/talleres/").then(res => res.json()).then(lista => {
             this.setState({
                 talleres: lista
             });
@@ -70,7 +70,7 @@ class Taller extends Component {
         this.setState({
             show:false
         });
-        fetch('/back/talleres/', {
+        fetch('http://localhost:3001/back/talleres/', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: {

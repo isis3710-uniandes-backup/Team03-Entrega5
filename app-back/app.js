@@ -11,9 +11,11 @@ var tallerRouter = require('./routes/taller');
 var publicacionRouter = require('./routes/publicacion');
 var robosRouter = require('./routes/robo');
 var serviciosRouter = require('./routes/servicio');
-
+var cors = require('cors');
 
 var app = express();
+app.use(cors());
+app.options('*', cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
