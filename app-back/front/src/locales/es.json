@@ -47,7 +47,11 @@
     "MeGusta": "Me gusta",
     "Maps":"Mapa de robos",
     "Login":"Login",
-    "CrearTaller":"Crear un taller",
+    "CrearG":"Crea un grupo",
     "Cancelar":"Cancelar",
+    "GruposDi":"Grupos Disponibles",
+    "Crear":"Crear grupo",
+    "Descripcion":"Descripción",
+    "CrearTaller":"Crear un taller",
     "CrearTB":"Crear Taller"
 }

@@ -49,8 +49,11 @@
     "Varios":"Likes",
     "Maps":"Map of thefts",
     "Login":"Login",
-    "CrearTaller":"Create a Workshop",
+    "CrearG":"Create a group",
     "Cancelar":"Cancel",
-    "CrearTB":"Create"
-
+    "GruposDi":"Available groups",
+    "Crear":"Create group",
+    "Descripcion":"Description",
+    "CrearTaller":"Create a workshop",
+    "CrearTB":"Create workshop"
 }
