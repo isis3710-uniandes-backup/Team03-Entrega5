@@ -19,7 +19,6 @@
     "Ops":"Ops, something went wrong",
     "LaRutaNoExiste":"The requested url doesn't exist, but you can return to our main page",
     "RegresarB":"Return",
-    "Talleres":"Repair Shops",
     "Bienvenido":"Welcome to PineBicis",
     "Sitio":"In out site, you get the opportunity to meet new friends that like bicycles just as you do",
     "Registrate":"Sign up now",
@@ -47,6 +46,8 @@
     "Servicios":"Services",
     "Me gusta": "Like",
     "Uno":"Like",
-    "Varios":"Likes" 
+    "Varios":"Likes",
+    "Maps":"Map of thefts",
+    "Login":"Login"
 
 }

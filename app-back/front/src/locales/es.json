@@ -19,12 +19,11 @@
     "Ops":"Ops, algo ha salido mal",
     "LaRutaNoExiste":"La url que estas buscando no existe, pero puedes regresar a nuestra pagina principal",
     "RegresarB":"Regresar",
-    "Talleres":"Talleres de reparación",
     "Bienvenido":"Bienvenido a PineBicis",
     "Sitio":"En nuestro sitio tienes la oportunidad de conocer mas personas amantes de las bicicletas como tu.",
     "Registrate":"Registrate ya!",
     "RegistrateB":"Registrate",
-    "Estadisticas":"Estadisticas por localidad",
+    "Estadisticas":"Estadisticas de robo por localidad",
     "Usuario": "Usuario",
     "Correo": "Correo",
     "Salir": "Cerrar sesion",
@@ -45,5 +44,7 @@
     "Servicios disponibles":"Servicios disponibles",
     "Productos disponibles":"Productos disponibles",
     "Servicios":"Servicios",
-    "MeGusta": "Me gusta"
+    "MeGusta": "Me gusta",
+    "Maps":"Mapa de robos",
+    "Login":"Login"
 }

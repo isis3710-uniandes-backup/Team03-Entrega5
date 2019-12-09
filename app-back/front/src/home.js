@@ -8,6 +8,7 @@ import './home.css';
 import TallerDetailed from './Taller/tallerDetailed';
 import NotFound from './notFound';
 import Map from './maps/map';
+import {FormattedMessage} from 'react-intl';
 
 class Home extends Component {
 
@@ -61,10 +62,10 @@ class Home extends Component {
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                       <Nav.Link as={Link} to="/">Home</Nav.Link>
-                      <Nav.Link as={Link} to="/talleres">Talleres</Nav.Link>
-                      <Nav.Link as={Link} to="/maps">Mapa de robos</Nav.Link>
-                      <Nav.Link onClick={this.signup.bind(this)}>Registrarse</Nav.Link>
-                      <Nav.Link onClick={this.login.bind(this)}>Login</Nav.Link>
+                      <Nav.Link as={Link} to="/talleres"><FormattedMessage id="Talleres"/></Nav.Link>
+                      <Nav.Link as={Link} to="/maps"><FormattedMessage id="Maps"/></Nav.Link>
+                      <Nav.Link onClick={this.signup.bind(this)}><FormattedMessage id="RegistrateB"/></Nav.Link>
+                      <Nav.Link onClick={this.login.bind(this)}><FormattedMessage id="Login"/></Nav.Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>

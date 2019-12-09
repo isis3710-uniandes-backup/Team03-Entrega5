@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import *  as d3 from 'd3';
+import {FormattedMessage} from 'react-intl';
 
 class Chart extends Component {
 
@@ -57,6 +58,8 @@ class Chart extends Component {
         svg.attr("width", width);
         svg.attr("height", height);
 
+
+
         let g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
         const dataF = data[0]['semanas']
         console.log(dataF)
@@ -92,6 +95,7 @@ class Chart extends Component {
     render() {
             return (
                 <div>
+                    <h2><FormattedMessage id="Estadisticas"/></h2>
                 <div ref="canvas">
                 </div>
                 </div>
