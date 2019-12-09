@@ -9,7 +9,7 @@ class TallerDetailed extends Component {
     UNSAFE_componentWillMount()
     {
          let idTaller=this.props.match.params.id;
-             fetch("/back/talleres/"+idTaller, {
+             fetch("http://localhost:3001/back/talleres/"+idTaller, {
                 headers : { 
                   'Content-Type': 'application/json',
                   'Accept': 'application/json'

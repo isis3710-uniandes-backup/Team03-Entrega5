@@ -50,7 +50,7 @@ class Reportar extends Component {
             show:false
         })
 
-        fetch('/robos/', {
+        fetch('http://localhost:3001/robos/', {
             method: 'POST', 
             body: JSON.stringify(data), 
             headers:{
