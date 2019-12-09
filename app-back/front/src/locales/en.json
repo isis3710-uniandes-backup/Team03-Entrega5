@@ -48,6 +48,9 @@
     "Uno":"Like",
     "Varios":"Likes",
     "Maps":"Map of thefts",
-    "Login":"Login"
+    "Login":"Login",
+    "CrearTaller":"Create a Workshop",
+    "Cancelar":"Cancel",
+    "CrearTB":"Create"
 
 }
