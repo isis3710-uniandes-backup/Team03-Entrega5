@@ -11,7 +11,7 @@ class PublicacionList extends Component {
         
     }
     
-    UNSAFE_componentDidMount(){
+    componentDidMount(){
         if (!navigator.onLine) {
             if (localStorage.getItem('publicaciones') === null)
                 this.setState({
@@ -25,7 +25,7 @@ class PublicacionList extends Component {
             }
         }
             else{
-        fetch("/publicaciones/").then(res => res.json()).then(m=>{console.log(m);this.setState({
+        fetch("http://localhost:3001/publicaciones/").then(res => res.json()).then(m=>{console.log(m);this.setState({
             list:m
             
         });
@@ -38,8 +38,29 @@ class PublicacionList extends Component {
     }
     
     UNSAFE_componentWillUnmount() {
-        localStorage.setItem('publicaciones', JSON.stringify(this.state));
+        if (!navigator.onLine) {
+            if (localStorage.getItem('publicaciones') === null)
+                this.setState({
+                    list: []
+                
+                    
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('publicaciones'));
+                this.setState(u);
+            }
+        }else{
+            fetch("http://localhost:3001/publicaciones/").then(res => res.json()).then(m=>{console.log(m);this.setState({
+                list:m
+                
+            });
+            localStorage.setItem('publicaciones', JSON.stringify({
+                list: m
+            }));
+    
+    });
       }
+    }
   
     render() {
         

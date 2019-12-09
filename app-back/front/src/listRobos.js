@@ -25,7 +25,7 @@ class ListRobos extends Component {
             }
         }else{
         
-        var str ="/robos/" + m.nickname + ""
+        var str ="http://localhost:3001/robos/" + m.nickname + "/"
         fetch(str).then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({
@@ -36,6 +36,21 @@ class ListRobos extends Component {
             }));
         });
     }
+    }
+    componentDidMount() {
+        if (!navigator.onLine) {
+            if (localStorage.getItem('robos') === null)
+                this.setState({
+                    listRobos : []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('robos'));
+                this.setState(u);
+            }
+        }
+        
+         
+      
     }
 
     renderRobos() {

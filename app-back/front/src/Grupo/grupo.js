@@ -15,7 +15,17 @@ class Grupo extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
-        fetch("/back/grupos/", {
+        if (!navigator.onLine) {
+            if (localStorage.getItem('grupos') === null)
+                this.setState({
+                    talleres: []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('grupos'));
+                this.setState(u);
+            }
+        }else{
+        fetch("http://localhost:3001/back/grupos/", {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -32,22 +42,21 @@ class Grupo extends Component {
             localStorage.setItem('grupos', JSON.stringify(gruo));
         });
     }
-    UNSAFE_componentDidMount() {
-
+    }
+    componentDidMount() {
         if (!navigator.onLine) {
-          if (localStorage.getItem('grupos') === null)
-              this.setState({
-                show: false,
-                grupos: [],
-                nombre: '',
-                descripcion: '',
-                redirect:false
-            });
-          else{
-            var u=JSON.parse(localStorage.getItem('grupos'));
-              this.setState(u);
-          }
-      }
+            if (localStorage.getItem('grupos') === null)
+                this.setState({
+                    grupos: []
+                })
+            else{
+              var u=JSON.parse(localStorage.getItem('grupos'));
+                this.setState(u);
+            }
+        }
+        
+         
+      
     }
     handleShow = () => {
         console.log(this.state.show)
@@ -69,7 +78,7 @@ class Grupo extends Component {
         this.setState({
             show:false
         });
-        fetch('/back/grupos/', {
+        fetch('http://localhost:3001/back/grupos/', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: {

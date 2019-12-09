@@ -16,7 +16,7 @@ class Servicio extends Component {
         }
     }else{
          var id2=this.state.id;
-         let m="/servicios/"+id2;
+         let m="http://localhost:3001/servicios/"+id2;
           fetch(m, {
                 method: 'GET',
                 headers : { 
