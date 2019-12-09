@@ -53,6 +53,7 @@
     "Cancelar":"Cancel",
     "GruposDi":"Available groups",
     "Crear":"Create group",
-    "Descripcion":"Description"
-
+    "Descripcion":"Description",
+    "CrearTaller":"Create a workshop",
+    "CrearTB":"Create workshop"
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Button, Modal, Form } from 'react-bootstrap';
+import {FormattedMessage} from 'react-intl';
 
 class Taller extends Component {
     constructor() {
@@ -97,23 +98,23 @@ class Taller extends Component {
         return <> <Button variant="danger" onClick={() => this.handleShow()}>+</Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Crea un Taller</Modal.Title>
+                    <Modal.Title><FormattedMessage id="CrearTaller"/></Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="nombre">
-                            <Form.Label>Nombre:</Form.Label>
+                            <Form.Label><FormattedMessage id="Nombre"/>:</Form.Label>
                             <Form.Control type="text" />
                         </Form.Group>
                         <Form.Group controlId="direc">
-                            <Form.Label>Dirección:</Form.Label>
+                            <Form.Label><FormattedMessage id="Direccion"/>:</Form.Label>
                             <Form.Control type="text" />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
-                    <Button variant="success" onClick={this.handleSubmit}>Crear taller</Button>
+                    <Button variant="secondary" onClick={this.handleClose}><FormattedMessage id="Cancelar"/></Button>
+                    <Button variant="success" onClick={this.handleSubmit}><FormattedMessage id="CrearTB"/></Button>
                 </Modal.Footer>
             </Modal>
         </>;
@@ -130,7 +131,7 @@ class Taller extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4" key={i}>
                             <div className="card border-danger text-center my-2">
-                                <h2>Crea un Taller</h2>
+                                <h2><FormattedMessage id="CrearTaller"/></h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -153,7 +154,7 @@ class Taller extends Component {
                         retorno.push(
                             <div className="col-12 col-md-4" key ={i+1}>
                                 <div className="card border-danger text-center my-2">
-                                    <h2>Crea un Taller</h2>
+                                    <h2><FormattedMessage id="CrearTaller"/></h2>
                                     {this.DeployForm()}
                                 </div>
                             </div>);
@@ -176,7 +177,7 @@ class Taller extends Component {
                         retorno.push(
                             <div className="col-12 col-md-4" key ={i+2}>
                                 <div className="card border-danger text-center my-2">
-                                    <h2>Crea un Taller</h2>
+                                    <h2><FormattedMessage id="CrearTaller"/></h2>
                                     {this.DeployForm()}
                                 </div>
                             </div>);
@@ -200,7 +201,7 @@ class Taller extends Component {
     render() {
         return (
             <div className="container-fluid text-center" id="pagTaller">
-                <h1 className="display-4">Talleres</h1>
+                <h1 className="display-4"><FormattedMessage id="Talleres"/></h1>
                 {this.deployList().map((e) => {
                     return e;
                 })}
