@@ -46,5 +46,10 @@
     "Servicios":"Servicios",
     "MeGusta": "Me gusta",
     "Maps":"Mapa de robos",
-    "Login":"Login"
+    "Login":"Login",
+    "CrearG":"Crea un grupo",
+    "Cancelar":"Cancelar",
+    "GruposDi":"Grupos Disponibles",
+    "Crear":"Crear grupo",
+    "Descripcion":"Descripción"
 }

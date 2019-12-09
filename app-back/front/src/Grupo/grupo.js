@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Form, Modal, Button } from 'react-bootstrap';
+import {FormattedMessage ,FormattedNumber, FormattedPlural} from 'react-intl';
 
 class Grupo extends Component {
     constructor() {
@@ -104,23 +105,23 @@ class Grupo extends Component {
         return <> <Button variant="danger" onClick={() => this.handleShow()}>+</Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Crea un Grupo</Modal.Title>
+                    <Modal.Title><FormattedMessage id="CrearG"/></Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="nombre">
-                            <Form.Label>Nombre:</Form.Label>
+                            <Form.Label><FormattedMessage id="Nombre"/>:</Form.Label>
                             <Form.Control type="text" />
                         </Form.Group>
                         <Form.Group controlId="desc">
-                            <Form.Label>Descripción:</Form.Label>
+                            <Form.Label><FormattedMessage id="Descripcion"/></Form.Label>
                             <Form.Control type="text" />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
-                    <Button variant="success" onClick={this.handleSubmit}>Crear Grupo</Button>
+                    <Button variant="secondary" onClick={this.handleClose}><FormattedMessage id="Cancelar"/></Button>
+                    <Button variant="success" onClick={this.handleSubmit}><FormattedMessage id="Crear"/></Button>
                 </Modal.Footer>
             </Modal>
         </>;
@@ -136,7 +137,7 @@ class Grupo extends Component {
                 retorno.push(
                     <div className="col-12 col-md-4" key={i}>
                         <div className="card border-danger text-center my-2">
-                            <h2>Crea un grupo</h2>
+                            <h2><FormattedMessage id="CrearG"/></h2>
                             {this.DeployForm()}
                         </div>
                     </div>);
@@ -157,7 +158,7 @@ class Grupo extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4" key={i+1}>
                             <div className="card border-danger text-center my-2">
-                                <h2>Crea un grupo</h2>
+                                <h2><FormattedMessage id="CrearG"/></h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -178,7 +179,7 @@ class Grupo extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4" key={i+2}>
                             <div className="card border-danger text-center my-2">
-                                <h2>Crea un grupo</h2>
+                                <h2><FormattedMessage id="CrearG"/></h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -204,7 +205,7 @@ class Grupo extends Component {
             <div className="container-fluid text-center">
                 <br>
                 </br>
-                <h1 className="display-4">Grupos disponibles</h1>
+                <h1 className="display-4"><FormattedMessage id="GruposDi"/></h1>
                 <br>
                 </br>
                 <br>

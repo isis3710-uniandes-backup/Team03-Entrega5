@@ -48,6 +48,11 @@
     "Uno":"Like",
     "Varios":"Likes",
     "Maps":"Map of thefts",
-    "Login":"Login"
+    "Login":"Login",
+    "CrearG":"Create a group",
+    "Cancelar":"Cancel",
+    "GruposDi":"Available groups",
+    "Crear":"Create group",
+    "Descripcion":"Description"
 
 }
