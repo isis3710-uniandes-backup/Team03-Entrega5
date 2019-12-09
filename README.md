@@ -5,17 +5,30 @@ Bicicletas BIKES es una plataforma que pretende apoyar a los ciclistas de Bogot�
 
 
 
-## Para desplegar la aplicaci처n:
+## Instrucciones para correr la aplicaci처n en desarrollo:
 
 - Moverse a la carpeta raiz app-back
 - Ejecutar `npm install` en consola
-- Ejecutar `npm run build` en consola
 - Moverse a la carpeta front
 - Ejecutar `npm install` en consola
+- Ejecutar `npm run build` en consola
 - Volver a la carpeta raiz app-back
 - Ejecutar `npm start`
 - Abrir otra ventana de comandos
 - Ir a la carpeta front y ejecutar `npm start`
+
+## Instrucciones para correr la aplicaci처n en producci처n (probar PWA):
+
+- Moverse a la carpeta raiz app-back
+- Ejecutar `npm install` en consola
+- Ejecutar `npm start`
+- Abrir otra ventana de comandos
+- Moverse a la carpeta front
+- Ejecutar `npm install` en consola
+- Ejecutar `npm run build` en consola
+- Moverse a la carpeta build
+- Ejecutar `http-server -o` ( Aclaraci처n: El backend debe estar corriendo en localhost)
+
 
 ### Video:
 
